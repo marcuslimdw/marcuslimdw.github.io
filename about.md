@@ -4,6 +4,4 @@ title: About
 permalink: /about/
 ---
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
-
-email: agus[at]python.web.id
+I'm a law student turned data scientist. I write code (mostly Python, with some Scala) for a living, then when I can find the time, I go home and write more code. I'm particularly interested in machine learning and deep learning.
