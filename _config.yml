@@ -1,11 +1,11 @@
 title: Stack Problems
 description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
-avatar_url: /static/img/avatar.jpg
+author: Marcus Lim
+github: https://github.com/marcuslimdw
+about: I like coding, solving problems and building things. I especially like coding to solve problems and build things.
+# disqus_shortname: stackproblems
+# google_analytics: UA-XXXXXXXX-Y
+# avatar_url: /static/img/avatar.jpg
 
 enableTags: true
 tagarray: []
@@ -16,30 +16,30 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
+#    - icon: fa-facebook
+#      link: "#"
+#    - icon: fa-twitter
+#      link: "#"
     - icon: fa-linkedin
-      link: "#"
+      link: "https://linkedin.com/in/marcusldw"
     - icon: fa-stack-exchange
-      link: "#"
+      link: "https://stackoverflow.com/questions/55439508/how-to-convert-a-dictionary-to-a-list/55439620#55439620"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/marcuslimdw"
 
-share:
-  twitter_username: github.io
-  fb_appid: 1749788565247320
+# share:
+#   twitter_username: github.io
+#   fb_appid: 1749788565247320
 
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
+    # - text: My Projects
+    #   url: /projects/
+    # - text: XML Feed
+    #   url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://marcuslimdw.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
