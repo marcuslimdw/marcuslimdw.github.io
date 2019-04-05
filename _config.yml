@@ -1,11 +1,11 @@
-title: Naming Things
-description: Naming Things Is Hard
+title: Naming things is hard.
+description: 
 author: Marcus Lim
 github: https://github.com/marcuslimdw
-about: I like coding, solving problems and building things. I especially like coding to solve problems and build things.
+about: I like coding, solving problems and building things.
 # disqus_shortname: stackproblems
 # google_analytics: UA-XXXXXXXX-Y
-# avatar_url: /static/img/avatar.jpg
+avatar_url: /static/img/avatar.jpg
 
 enableTags: true
 tagarray: []
@@ -23,7 +23,7 @@ social:
     - icon: fa-linkedin
       link: "https://linkedin.com/in/marcusldw"
     - icon: fa-stack-exchange
-      link: "https://stackoverflow.com/questions/55439508/how-to-convert-a-dictionary-to-a-list/55439620#55439620"
+      link: "https://stackoverflow.com/users/11015427/gmds"
     - icon: fa-github
       link: "https://github.com/marcuslimdw"
 
@@ -45,7 +45,7 @@ paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
 markdown: kramdown
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
 
