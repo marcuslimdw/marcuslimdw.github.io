@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Revisiting the Central Limit Theorem: Part Two"
-subtitle: "Exploring assumptions and edge cases"
+title:  "Revisiting the central limit theorem: part two"
 date: 2018-10-21 17:00:00 +0800
-categories: tutorials
-image_path: "/assets/revisiting-the-central-limit-theorem-part-two/"
+categories: [tutorials]
+tags: [clt, statistics]
+asset_path: "/assets/revisiting-the-central-limit-theorem-part-two/"
 ---
 
 This is the second part of a planned series on the Central Limit Theorem! In this post, we'll talk about the assumptions behind the CLT, which control when it applies.
@@ -15,7 +15,7 @@ The first post, which dealt with what the CLT is, can be found [here]({{ site.ba
 
 The distribution of the values of *each observation* will approximate the population distribution, which is not necessarily normal. Therefore, in the case where each sample contains only one observation, the CLT will clearly not hold since the sample's mean is the same as the value of the single observation in it. 
 
-<img src="{{ page.image_path }}/varying-sample-sizes.png" width="100%"/> 
+<img src="{{ page.asset_path }}/varying-sample-sizes.png" width="100%"/> 
 
 As the sample size increases, however, the likelihood of the sample mean being close to the population mean increases, while the influence of single observations on the population sum decreases. These two effects combine to render the (normalised) sample mean distribution more and more normal.
 
@@ -31,19 +31,19 @@ In summary, therefore, the greater the interdependence of observations, the smal
 
 The variance of a distribution is the square of its standard deviation, and describes its "spread", or, intuitively, how far an observation will be from the mean:
 
-<p align="center"><img src="{{ page.image_path }}/variance-comparison.png" width="60%"/></p>
+<p align="center"><img src="{{ page.asset_path }}/variance-comparison.png" width="60%"/></p>
 
 It turns out that some distributions have an infinite or undefined variance. Practically speaking, this means that occasionally, a sample will contain an observation that is so extreme, it changes the mean by a large amount.
 
 Consider this histogram of 1000 means, each calculated from an independent sample of size 250 taken from a population that is [Student's t distributed](https://en.wikipedia.org/wiki/Student's_t-distribution) with 2 degrees of freedom:
 
-<p align="center"><img src="{{ page.image_path }}/t-distribution.png" width="80%"/></p>
+<p align="center"><img src="{{ page.asset_path }}/t-distribution.png" width="80%"/></p>
 
 The t-distribution's infinite variance can be observed from the presence of "outlier" sample means arising from single extreme observations.
 
 In the case of the (standard) [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution), which has undefined variance (and mean), the distribution of sample means is even more unusual:
 
-<p align="center"><img src="{{ page.image_path }}/cauchy-distribution.png" width="80%"/></p>
+<p align="center"><img src="{{ page.asset_path }}/cauchy-distribution.png" width="80%"/></p>
 
 In this case, while the bulk of sample means are near 0, there are a few which deviate greatly, being below -50 or above 50, because they contain single observations that are extremely large in magnitude.
 

@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Six Months To Become A Data Scientist"
+title:  "Six months to become a data scientist"
 subtitle: "Reflections on GA-DSI"
 date: 2018-12-25 17:00:00 +0800
-categories: personal
-image_path: "/assets/six-months-to-become-a-data-scientist/"
+categories: [thoughts]
+tags: [personal, statistics]
+asset_path: "/assets/six-months-to-become-a-data-scientist/"
 ---
 
 As a preamble - I would like to finish my posts on the CLT and on classification (I actually have the illustrations ready; it's just a matter of planning and writing), but life has been hectic, what with capstone consultations, starting a new job and just life in general. Someday. Hopefully before ~~the new year~~ Chinese New Year.
 
-<img src="{{ page.image_path }}/progress-bar.png" width="55%" align="right"/>
+<img src="{{ page.asset_path }}/progress-bar.png" width="55%" align="right"/>
 
 Anyway, some have asked me about what the Data Science Immersive experience at General Assembly (GA-DSI) is like. Having gone through it first as a student and then as an instructional associate (I find it sounds nicer than "teaching assistant", though it is harder to type), I figured I would make a public post about what I went through and how I felt.
 
@@ -47,7 +48,7 @@ The statistics portion is largely foundational: basic concepts such as probabili
 
 For data analysis and machine learning in a small-scale context using Python, these are indubitably the gold standard. If you will be doing exploration/modelling on smaller datasets, these are, to a fairly large extent, all you will need. Note that work is often done not in scripts, but Jupyter notebooks, which are an interactive tool useful in exploration and experimentation.
 
-<img src="{{ page.image_path }}/what-i-really-do.png"/>
+<img src="{{ page.asset_path }}/what-i-really-do.png"/>
 
 The machine learning part deserves a bit more elaboration; the following topics are covered:
 
@@ -72,7 +73,7 @@ In my current position, I need to deal with much larger volumes of data (gigabyt
 
 Lastly, I had to get familiar with the whole technology workflow stack really quickly - most of these tools were not touched on during DSI. For example, on a daily basis, I use:
 
-<img src="{{ page.image_path }}/what-you-expect.png" width="55%" align="right"/>
+<img src="{{ page.asset_path }}/what-you-expect.png" width="55%" align="right"/>
 
 * JIRA to track issues that need to be resolved
 * Git for version control

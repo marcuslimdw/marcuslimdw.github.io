@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "MapleStory Scroll Efficiency"
-subtitle: "A quick Monte Carlo simulation"
+title:  "MapleStory scroll efficiency"
 date: 2018-08-30 17:00:00 +0800
-categories: projects
-image_path: "/assets/quick-monte-carlo-simulation/"
+categories: [projects]
+tags: [game, monte-carlo, statistics]
+asset_path: "/assets/maplestory-scroll-efficiency"
 ---
 
 Recently, someone said to me "Hey, you know data science, right? I have a problem for you..."
@@ -94,7 +94,7 @@ def calcScroll(scroll_data, equipment_cost = 200, max_stars = 5):
 
 A call to this function will return, for that particular trial, pieces of equipment required (in case of breakage), the number of scrolls used, and the total cost. I chose to run 100,000 simulations per type of scroll, resulting in 300,000 data points. This took about 3 seconds, and gave me more than enough data, with which I was able to run some visualisations.
 
-<img src="{{ page.image_path }}/scrolls-needed.png" width="100%"/>
+<img src="{{ page.asset_path }}/scrolls-needed.png" width="100%"/>
 
 You might wonder why the minimum value for scrolls is 0. This is because, to get 5 stars, at least 5 scrolls will always be necessary. Therefore, this visualisation tracks instead the number of *extra* scrolls beyond those 5 that are needed per trial.
 
@@ -107,11 +107,11 @@ Firstly, 30% and 50% scrolls cost more (up to 3.5 times more!) than 10% scrolls.
 Also, because 30% and 50% scrolls have a chance to cause equipment breakage, the cost of replacement equipment must be factored in, and one piece of equipment is equivalent to <span class="emphasis">ten</span> 10% scrolls in terms of cost. Therefore, we have to look at how many pieces of replacement equipment we are likely to need.
 
 
-<img src="{{ page.image_path }}/equipment-needed.png" width="100%"/>
+<img src="{{ page.asset_path }}/equipment-needed.png" width="100%"/>
 
 This shows how many pieces of equipment were purchased for each trial (the results for the 10% scroll are not shown because there is no chance of breakage). In more than half of the trials for both 30% and 50% scrolls, at least one instace of equipment breakage occurred. Imagine having spent over 500 stones on upgrading your equipment: not only have you wasted all the money you spent on scrolls, you will have to fork out even more for replacement equipment. This chance of breakage is what really pushes the average cost of using 30% and 50% scrolls up.
 
-<img src="{{ page.image_path }}/total-cost.png" width="100%"/>
+<img src="{{ page.asset_path }}/total-cost.png" width="100%"/>
 
 Overall, <span class="emphasis">using 10% scrolls is generally the most cost-effective path to a fully upgraded piece of equipment</span>. As calculated earlier, doing so will cost about 1,200 stones. Using 30% scrolls will cost around 1,350 stones, and using 50% scrolls a little over 1,500 stones.
 

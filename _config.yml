@@ -8,12 +8,12 @@ about: I like coding, solving problems and building things.
 avatar_url: /static/img/avatar.jpg
 
 enableTags: true
-tagarray: []
+tagarray: ['computer-engineering', 'statistics', 'animation', 'data-science', 'machine-learning', 'monte-carlo', 'personal', 'classification', 'python', 'clt', 'game']
 
-collections:
-  project:
-    output: true
-    permalink: /project/:path/
+# collections:
+#   project:
+#     output: true
+#     permalink: /project/:path/
 
 social:
 #    - icon: fa-facebook
@@ -36,8 +36,8 @@ urls:
       url: /about/
     # - text: My Projects
     #   url: /projects/
-    # - text: XML Feed
-    #   url: /feed.xml
+    - text: XML Feed
+      url: /feed.xml
 
 url: "https://marcuslimdw.github.io"
 baseurl: ""

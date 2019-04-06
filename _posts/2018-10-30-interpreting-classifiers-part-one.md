@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Classifier Interpretation: Part One"
-subtitle: "Confusion matrices, accuracy, precision and recall"
+title:  "Classifier interpretation: part one"
 date: 2018-10-30 17:00:00 +0800
-categories: tutorials
-image_path: "/assets/classifier-interpretation-part-one/"
+categories: [tutorials]
+tags: [classification, machine-learning, statistics]
+asset_path: "/assets/classifier-interpretation-part-one/"
 ---
 
 Classification refers to dividing observations into a number of categories, and is very common in machine learning. For example, based on a patient's hormone levels, it is possible to test whether she is pregnant; in other words, patients can be put into either of the "Pregnant" and "Not Pregnant" classes. The method of performing this separation is termed a classifier.
@@ -18,7 +18,7 @@ Precision &= \frac{correct\ predictions\ for\ a\ class}{total\ predictions\ for\
 
 \end{align}$$
 
-<img src="{{ page.image_path }}/drunk-sober-comparison.png" width="45%" align="right"/>
+<img src="{{ page.asset_path }}/drunk-sober-comparison.png" width="45%" align="right"/>
 
 If these definitions don't really make sense right now, don't worry; we'll put them in context later. 
 
@@ -35,7 +35,7 @@ Unfortunately, breathalysers are not perfect. Due to differences in body chemist
 
 The relationship between what our tests predict and what is actually the case is usually not illustrated with a bar graph, as used above. A much more common tool is one that is simultaneously ubiquitous, useful and aptly named: the **confusion matrix**.
 	
-<img src="{{ page.image_path }}/confusion-matrix-example.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-example.png" width="50%" align="right"/>
 
 In a confusion matrix, the rows represent the various possibilities for the actual classes, which we call the *ground truth* (the blue cells). A partygoer will be placed into either of the rows, depending on whether they are actually drunk or sober.
 
@@ -46,7 +46,7 @@ So, for example, the green cell in the "actually drunk" row and the "tested drun
 Confusion matrices are a common way to present the results of classification because they contain all the possible combinations of ground truth classes and prediction classes.	However, sometimes we just want a single number that can describe how good our classification process is, such as the metrics listed above: accuracy, precision and recall.
 
 Accuracy is probably the simplest; intuitively, it measures *how often classification was performed correctly*. Therefore, the breathalyser is accurate where it correctly identifies a drunk person as drunk or a sober person as sober, and inaccurate otherwise. 
-<img src="{{ page.image_path }}/confusion-matrix-accuracy-breathalyser.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-accuracy-breathalyser.png" width="50%" align="right"/>
 
 In other words, we can calculate accuracy by adding up the counts in the "correct" (blue) cells and dividing them by the total (red + blue). Putting in the numbers, we have:
 
@@ -61,7 +61,7 @@ Accuracy &= \frac{correctly\ predicted\ observations}{total\ observations} \\
 We can see that the breathalyser test's classifications are right 79% of the time; we say it has 79% accuracy, which seems like a pretty good score. This raises a question: is high accuracy always desirable?
 
 The answer is that it depends on the problem you are trying to solve. Imagine now that instead of using a breathalyser, the police are lazy and just say that every single person at the party is drunk, *including the 50 sober ones*. This is what the confusion matrix would look like.
-<img src="{{ page.image_path }}/confusion-matrix-accuracy-police.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-accuracy-police.png" width="50%" align="right"/>
 
 The current accuracy is $$\frac{450}{500}\ $$, or 90%. Remember that 145 people were sober under the breathalyser test. 100 were actually drunk and are now classified correctly, but 45 were sober and are now classified wrongly, leaving 55 more people identified correctly, or a 11 percentage point accuracy increase.
 
@@ -75,8 +75,8 @@ A naïve police chief who uses only accuracy as a metric will mistakenly conclud
 
 Unlike accuracy, which is one score calculated over all the data, precision and recall are metrics assessing performance for individual classes. Let's go back to the confusion matrix for the breathalyser test and look at the majority class - drunk people. Focus first on the green cells.
 
-<img src="{{ page.image_path }}/confusion-matrix-recall-breathalyser.png" width="50%" align="left"/>
-<img src="{{ page.image_path }}/confusion-matrix-recall-police.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-recall-breathalyser.png" width="50%" align="left"/>
+<img src="{{ page.asset_path }}/confusion-matrix-recall-police.png" width="50%" align="right"/>
 
 The recall metric measures how many of those actually in a class were predicted to be in that class; the higher it is, the more "complete" the prediction. Applying the formula given at the start to the "drunk" class, we have:
 
@@ -87,8 +87,8 @@ Recall &= \frac{correct\ predictions\ for\ a\ class}{total\ observations\ in\ th
 
 This gives a recall of $$\frac{350}{450} \approx 0.78\ \ \ \ $$ for the breathalyser test and of $$\frac{450}{450} = 1\ \ \ $$ for the lazy police.
 
-<img src="{{ page.image_path }}/confusion-matrix-precision-breathalyser.png" width="50%" align="left"/>
-<img src="{{ page.image_path }}/confusion-matrix-precision-police.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-precision-breathalyser.png" width="50%" align="left"/>
+<img src="{{ page.asset_path }}/confusion-matrix-precision-police.png" width="50%" align="right"/>
 
 Precision, on the other hand, looks at what proportion of those who were predicted to be in a class were actually in that class. It is a measure of the "purity" of predictions. Similarly, applying the formula above to the "drunk" class:
 
@@ -103,8 +103,8 @@ We can see that while the lazy police have slightly higher recall, the breathaly
 
 What about the minority class - sober people (the beige cells above)? Using the same formula, we can calculate the precision and recall for both classifiers, which will give us two more scores each:
 
-<img src="{{ page.image_path }}/confusion-matrix-precision-recall-breathalyser.png" width="50%" align="left"/>
-<img src="{{ page.image_path }}/confusion-matrix-precision-recall-police.png" width="50%" align="right"/>
+<img src="{{ page.asset_path }}/confusion-matrix-precision-recall-breathalyser.png" width="50%" align="left"/>
+<img src="{{ page.asset_path }}/confusion-matrix-precision-recall-police.png" width="50%" align="right"/>
 
 Incidentally, note that the lazy police's precision for the sober class is undefined, because to calculate precision we divide by the number of people who tested as sober, which is 0, and division by 0 is undefined.
 

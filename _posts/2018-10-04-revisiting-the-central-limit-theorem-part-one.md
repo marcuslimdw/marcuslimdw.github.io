@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Revisiting the Central Limit Theorem: Part One"
-subtitle: "What the CLT means"
+title:  "Revisiting the central limit theorem: part one"
 date: 2018-10-03 17:00:00 +0800
-categories: tutorials
-image_path: "/assets/revisiting-the-central-limit-theorem-part-one/"
+categories: [tutorials]
+tags: [clt, statistics]
+asset_path: "/assets/revisiting-the-central-limit-theorem-part-one/"
 ---
 
 In school, the Central Limit Theorem (CLT) was brought up briefly, glossed over, and then forgotten. Only when I myself became an educator did I realise I needed to understand it, and its importance, more thoroughly.
 
-First, what _is_ the CLT? <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Wikipedia</a> states that it establishes that "in some situations, when independent random variables are added, their properly normalised sum tends toward a normal distribution...even if the original variables themselves are not normally distributed."
+First, what _is_ the CLT? [Wikipedia](https://en.wikipedia.org/wiki/Central_limit_theorem) states that it establishes that "in some situations, when independent random variables are added, their properly normalised sum tends toward a normal distribution...even if the original variables themselves are not normally distributed."
 
 That's rather technical, and as it turns out, there are actually several versions of the CLT, each with specific implications. Which you choose depends on the specific context. 
 
@@ -21,19 +21,19 @@ This statement depends on some crucial assumptions, which will be dealt with in 
 
 Consider this randomly generated population:
 
-<img src="{{ page.image_path }}/population-distributions.png" width="100%"/>
+<img src="{{ page.asset_path }}/population-distributions.png" width="100%"/>
 
 This histogram represents the heights of a million adults of each gender, plotted both separately and together. The x-axis is divided into 0.5 cm brackets, and the y-axis shows how many adults fall into each bracket. Each gender's height distribution is normal, but the combined distribution is clearly not. 
 
 What about the samples, then?  Compare a sample of heights taken from the population of males with one taken from the combined distribution (both samples are of size 500):
 
-<img src="{{ page.image_path }}/sample-distributions.png" width="100%"/>
+<img src="{{ page.asset_path }}/sample-distributions.png" width="100%"/>
 
 We can see that the observations in the samples are distributed approximately the same way as the populations they were taken from. In the case of the combined distribution, then, the sample will *not* be normal; that is not what the CLT says.
 
 Instead of looking at the observations, consider only their mean. Imagine that we take an increasing number of samples, calculate the sample means, and plot a histogram of the sample means.
 
-<img src="{{ page.image_path }}/sample-means.png" width="100%"/>
+<img src="{{ page.asset_path }}/sample-means.png" width="100%"/>
 
 We can see two things:
 
@@ -43,7 +43,7 @@ We can see two things:
 
 What then happens as the number of sample means gets closer to infinity? 
 
-<center><video width="640" height="360" controls> <source src="{{ page.image_path }}/sample-means-animation.mp4" type="video/mp4"> </video></center><br>
+<center><video width="640" height="360" controls> <source src="{{ page.asset_path }}/sample-means-animation.mp4" type="video/mp4"> </video></center><br>
 
 Remember that the area of each bar represents the probability that a sample mean will be within the range represented by that bar, but that range keeps on decreasing. At infinity, the width of any individual bar is 0, and therefore the probability of the sample mean being found to be any one single value is 0. 
 

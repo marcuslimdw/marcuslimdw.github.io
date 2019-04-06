@@ -2,11 +2,11 @@
 layout: post
 title:  "The birth of toyml"
 date:   2019-04-02 18:00:00 +0800
-categories: []
-tags: [machine-learning, python]
+categories: [toyml]
+tags: [computer-engineering, machine-learning, python]
 ---
 
-I've decided to write my own machine learning library, which I have aptly named `toyml`. While it definitely won't be as efficient as code specifically optimised for production, such as `sklearn`, it should be fast enough to be usable for small-scale tasks, at least. In particular, I want to develop my skills further and write clean, maintainable code. To me, that means:
+I've decided to write my own machine learning library, which I have aptly named `toyml` ([check it out on GitHub!](https://github.com/marcuslimdw/toyml)). While it definitely won't be as efficient as code specifically optimised for production, such as `sklearn`, it should be fast enough to be usable for small-scale tasks, at least. In particular, I want to develop my skills further and write clean, maintainable code. To me, that means:
 
 * Automated testing
 * Modular, extensible design
@@ -17,11 +17,8 @@ This post is rather late, since my first commit was actually in January, and it'
 A recap of what it can do now:
 
 * Linear regression, using (minibatch) gradient descent. I realise that my code actually doesn't work on more than a few rows at a time if the scale of the features is large, because it runs into integer overflow. I plan to use an analytic solution instead, and keep the gradient descent code for the deep learning module in the future.
-
-* Decision tree classification. This was the first "standard" machine learning model I made, which I'm quite proud of since it was also my first real experiment with functional programming. It actually works, and fairly quickly, too. On a toy dataset of shape `(20000, 10)`, at a maximum depth of 8, it takes ~2.5 seconds (`sklearn` takes 0.5 seconds), achieving a comparable score (99% as accurate or so).
-
+* Decision tree classification. This was the first "standard" machine learning model I made, which I'm quite proud of since it was also my first real experiment with functional programming. It actually works, and fairly quickly, too. On a toy dataset of shape `(20000, 10)`, at a maximum depth of 8, it takes about 2.5 seconds (`sklearn` takes 0.5 seconds), achieving a comparable score (99% as accurate or so).
 * Markov chain generation. This is a bit more "out there"; I first wrote one the morning of my Meet and Greet, back when I had just graduated from GA, just so I had something to showcase for text generation. This is a more object-oriented approach that prioritises extensibility. but it's really not good for much except as a showcase, in my opinion.
-
 * Basic model selection and interpretation. Common metrics such as recall, precision, mean squared error etc. have been implemented, along with a simple equivalent of `train_test_split` from `sklearn`. There's an approach using higher-level functions that I'd actually like to explore here, but one thing at a time.
 
 What I want to look at next:
@@ -40,6 +37,6 @@ These points are definitely too much to work on all at once, so I'm (hopefully) 
 
 Given the complexity of SVMs and neural networks, this might be too ambitious...or it might not. If I don't try, I won't know.
 
-On another note, I've been at Eureka for 4 months now. Working in a team definitely has developed my skills of software engineering, and I have learnt to solve problems I didn't even know could crop up back then. I'm learning Scala for real now, since I have to actually write it. It's really different from Python; I'm not sure how I feel about the *language*, but one thing is for sure.
+On another note, I've been at Eureka for 4 months now. Working in a team definitely has developed my skills of software engineering, and I have learnt to solve problems I didn't even know could crop up back then. 
 
-I love the challenge.
+I'm actively writing and learning Scala now, since I have to use it in a practical context. It's really different from Python; I'm not sure how I feel about the *language*, but one thing is for sure; I love the challenge.

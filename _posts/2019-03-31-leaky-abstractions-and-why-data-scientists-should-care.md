@@ -2,8 +2,9 @@
 layout: post
 title:  "Leaky abstractions and why data scientists should care"
 date:   2019-03-31 18:00:00 +0800
-categories: []
-tags: [computer-engineering, animation, data-science]
+categories: [tutorials]
+tags: [animation, computer-engineering, data-science]
+asset_path: "/assets/leaky-abstractions-and-why-data-scientists-should-care/"
 ---
 
 Some people say that data scientists are people who are better at computer engineering than statisticians and better at statistics than computer engineers. How much better at computer engineering one needs to be, though, is a matter of debate. Some are happy with the bare minimum needed to obtain results.
@@ -45,7 +46,7 @@ However, this also implies that the elements in the first column, `[0, 0]`, `[1,
 
 An illustration:
 
-<img src="/static/img/memory-layout.gif">
+<img src="{{ page.asset_path }}memory-layout.gif">
 
 Now, let's try something:
 
