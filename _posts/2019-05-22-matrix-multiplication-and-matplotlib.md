@@ -7,6 +7,8 @@ tags: [linear-algebra, matplotlib]
 asset_path: "/assets/matrix-multiplication-and-matplotlib/"
 ---
 
+**For some reason, MathJax isn't displaying the matrices in this post, even though they show fine locally. I'll try to fix it ASAP.**
+
 A note: this post isn't really meant to be instructional; it's more a way for me to note down something that I just learnt, so explanations will be sparser and less common. Feel free to contact me if you don't get anything, though.
 
 For a long while I've wondered "why is matrix multiplication so weird?" The intuitive ways of multiplying two groups of numbers together, to me, is to take the elementwise product (which I now know is called the *Hadamard product*).
