@@ -102,6 +102,7 @@ layout: compress
         extensions: ["tex2jax.js"],
         jax: ["input/TeX", "output/HTML-CSS"],
         tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
           displayMath: [ ['$$','$$'], ["\\[","\\]"] ],  
           processEscapes: true
@@ -112,7 +113,7 @@ layout: compress
     <script
       type="text/javascript"
       charset="utf-8"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_CHTML"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"
     >
     </script>
   </head>

@@ -7,8 +7,6 @@ tags: [linear-algebra, matplotlib]
 asset_path: "/assets/matrix-multiplication-and-matplotlib/"
 ---
 
-**For some reason, MathJax isn't displaying the matrices in this post, even though they show fine locally. I'll try to fix it ASAP.**
-
 A note: this post isn't really meant to be instructional; it's more a way for me to note down something that I just learnt, so explanations will be sparser and less common. Feel free to contact me if you don't get anything, though.
 
 For a long while I've wondered "why is matrix multiplication so weird?" The intuitive ways of multiplying two groups of numbers together, to me, is to take the elementwise product (which I now know is called the *Hadamard product*).
@@ -25,30 +23,26 @@ If a matrix can represent a linear function, then that is why matrix multiplicat
 
 I started with the following:
 
+<div>
 $$
-\Bigg(
-\begin{matrix}
+\begin{bmatrix}
 a & b \\
 c & d
-\end{matrix}
-\Bigg)
+\end{bmatrix}
 
-\Bigg(
-\begin{matrix}
+\begin{bmatrix}
 x \\
 y
-\end{matrix}
-\Bigg)
+\end{bmatrix}
 
 =
 
-\Bigg(
-\begin{matrix}
+\begin{bmatrix}
 ax + by \\
 cx + dy
-\end{matrix}
-\Bigg)
+\end{bmatrix}
 $$
+</div>
 
 Once I started experimenting with possible values of $a$, $b$, $c$ and $d$, it became much clearer. For example, the identity matrix would have $a$ and $d$ equal to 1 and the others to 0, which would mean that multiplying the identity matrix by a point would leave it unchanged - exactly as expected.
 
@@ -57,52 +51,52 @@ $a$ and $d$, then, would control scaling of each axis. Changing $b$ and $c$ woul
 And then I wondered: how can I represent a *translation* with this? Since each element of the matrix product depends on either $x$ or $y$, there would be no way to represent the addition of a constant value.
 
 That, of course, is why a 2D transformation is represented by a 3x3 matrix in `matplotlib`: the transformations instead take on this form:
-
+<div>
 $$
-\begin{pmatrix}
+\begin{bmatrix}
 a & b & c \\
 d & e & f \\
 0 & 0 & 1
-\end{pmatrix}
+\end{bmatrix}
 
-\begin{pmatrix}
+\begin{bmatrix}
 x \\
 y \\
 1
-\end{pmatrix}
+\end{bmatrix}
 
 =
 
-\begin{pmatrix}
+\begin{bmatrix}
 ax + by + c \\
 dx + ey + f \\
 1
-\end{pmatrix}
+\end{bmatrix}
 $$
-
+</div>
 Through the inclusion of an additional row in both the transformation and the point matrices, we can achieve the effect of adding a constant to the result, based on the values of $c$ and $f$.
 
 Another cool thing I realised about using matrix multiplication is that you can *apply it to an arbitrary number of points*, for example (using the 2-row form to save space):
-
+<div>
 $$
-\begin{matrix}
+\begin{bmatrix}
 a & b \\
 c & d \\
-\end{matrix}
+\end{bmatrix}
 
-\begin{matrix}
+\begin{bmatrix}
 x_0 & x_1 & ... & x_n \\
 y_0 & y_1 & ... & y_n \\
-\end{matrix}
+\end{bmatrix}
 
 =
 
-\begin{matrix}
+\begin{bmatrix}
 ax_0 + by_0 & ax_1 + by_1 & ... & ax_n + by_n \\
 cx_0 + dy_0 & cx_1 + dy_1 & ... & cx_n + dy_n \\
-\end{matrix}
+\end{bmatrix}
 $$
-
+</div>
 It really does make sense; everything is connected. If we had been taught this way back then, more people would probably have been interested in what seemed like just a useless mathematical curiosity.
 
 <img src="{{ page.asset_path }}/rotation.png" width="55%" align="right"/>
@@ -129,47 +123,47 @@ $$
 </div>
 
 This looks much better. Now, putting it back into the matrix multiplication form above (again, the 3rd row isn't necessary here):
-
+<div>
 $$
 \begin{align}
-\begin{matrix}
+\begin{bmatrix}
 a & b \\
 c & d \\
-\end{matrix}
+\end{bmatrix}
 
-\begin{matrix}
+\begin{bmatrix}
 cos \theta \\
 sin \theta
-\end{matrix}
+\end{bmatrix}
 
 &=
 
-\begin{matrix}
+\begin{bmatrix}
 cos \theta\ cos \alpha - sin \theta\ sin \alpha \\
 sin \theta\ cos \alpha + cos \theta\ sin \alpha
-\end{matrix} \\
+\end{bmatrix} \\
 
-\begin{matrix}
+\begin{bmatrix}
 a cos \theta + b sin \theta \\
 c cos \theta + d sin \theta
-\end{matrix}
+\end{bmatrix}
 
 &=
 
-\begin{matrix}
+\begin{bmatrix}
 cos \theta\ cos \alpha - sin \theta\ sin \alpha \\
 cos \theta\ sin \alpha + sin \theta\ cos \alpha
-\end{matrix}
+\end{bmatrix}
 \end{align}
 $$
-
+</div>
 We can now perform simple factorisation to get the values of $a$, $b$, $c$ and $d$ in terms of $\alpha$. By solving for them and substituting the values in the original matrix, we can derive the general matrix form for a rotational transformation of $\alpha$ radians:
-
+<div>
 $$
-\begin{matrix}
+\begin{bmatrix}
 cos \alpha & -sin \alpha \\
 sin \alpha &  cos \alpha
-\end{matrix}
+\end{bmatrix}
 $$
-
+</div>
 This is more mathematics than I've done in a while, but I actually find myself enjoying it quite a bit, since it's actually applicable to the code I write on a daily basis (and hope to write in the future). I think that's the really important part; linking all these disparate bits of knowledge together and understanding where they fit in the grand scheme of things.
