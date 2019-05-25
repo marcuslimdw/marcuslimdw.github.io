@@ -166,4 +166,4 @@ sin \alpha &  cos \alpha
 \end{bmatrix}
 $$
 </div>
-This is more mathematics than I've done in a while, but I actually find myself enjoying it quite a bit, since it's actually applicable to the code I write on a daily basis (and hope to write in the future). I think that's the really important part; linking all these disparate bits of knowledge together and understanding where they fit in the grand scheme of things.
+This is more mathematics than I've done in a while, but I find myself enjoying it quite a bit, since it's actually applicable to the code I write on a daily basis (and hope to write in the future). I think that's the really important part; linking all these disparate bits of knowledge together and understanding where they fit in the grand scheme of things.
