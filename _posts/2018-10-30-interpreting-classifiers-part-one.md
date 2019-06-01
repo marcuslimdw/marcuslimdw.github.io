@@ -11,12 +11,14 @@ Classification refers to dividing observations into a number of categories, and 
 
 Classifiers can be very useful; imagine a good and reliable test for cancer. However, "good" and "reliable" may mean different things to different people. There is therefore a need for an *objective* way to measure the performance of a classifier, and that is where classification metrics come in. Three common metrics are accuracy, recall and precision, which are calculated as follows:
 
+<div>
 $$\begin{align}
 Accuracy &= \frac{correctly\ predicted\ observations}{total\ observations} \\ \\ 
 Recall &= \frac{correct\ predictions\ for\ a\ class}{total\ observations\ in\ that\ class} \\ \\
 Precision &= \frac{correct\ predictions\ for\ a\ class}{total\ predictions\ for\ that\ class}
 
 \end{align}$$
+</div>
 
 <img src="{{ page.asset_path }}/drunk-sober-comparison.png" width="45%" align="right"/>
 
@@ -50,12 +52,14 @@ Accuracy is probably the simplest; intuitively, it measures *how often classific
 
 In other words, we can calculate accuracy by adding up the counts in the "correct" (blue) cells and dividing them by the total (red + blue). Putting in the numbers, we have:
 
+<div>
 $$\begin{align}
 Accuracy &= \frac{correctly\ predicted\ observations}{total\ observations} \\
 &= \frac{(45 + 350)}{(45 + 5 + 100 + 350)} \\
 &= \frac{395}{500} \\
 &= 79\%
 \end{align}$$
+</div>
 
 <br>
 We can see that the breathalyser test's classifications are right 79% of the time; we say it has 79% accuracy, which seems like a pretty good score. This raises a question: is high accuracy always desirable?
@@ -63,7 +67,7 @@ We can see that the breathalyser test's classifications are right 79% of the tim
 The answer is that it depends on the problem you are trying to solve. Imagine now that instead of using a breathalyser, the police are lazy and just say that every single person at the party is drunk, *including the 50 sober ones*. This is what the confusion matrix would look like.
 <img src="{{ page.asset_path }}/confusion-matrix-accuracy-police.png" width="50%" align="right"/>
 
-The current accuracy is $$\frac{450}{500}\ $$, or 90%. Remember that 145 people were sober under the breathalyser test. 100 were actually drunk and are now classified correctly, but 45 were sober and are now classified wrongly, leaving 55 more people identified correctly, or a 11 percentage point accuracy increase.
+The current accuracy is $\frac{450}{500}\ $, or 90%. Remember that 145 people were sober under the breathalyser test. 100 were actually drunk and are now classified correctly, but 45 were sober and are now classified wrongly, leaving 55 more people identified correctly, or a 11 percentage point accuracy increase.
 
 Note that the number of drunk people is 9 times the number of sober people. In machine learning, this is termed an "imbalanced class problem", where one class - the "minority class" - has much fewer members than the other - the "majority class".
 
@@ -80,24 +84,28 @@ Unlike accuracy, which is one score calculated over all the data, precision and 
 
 The recall metric measures how many of those actually in a class were predicted to be in that class; the higher it is, the more "complete" the prediction. Applying the formula given at the start to the "drunk" class, we have:
 
+<div>
 $$\begin{align}
 Recall &= \frac{correct\ predictions\ for\ a\ class}{total\ observations\ in\ that\ class} \\ \\
 &= \frac{Number\ of\ people\ who\ tested\ drunk}{Number\ of\ actually\ drunk\ people}
 \end{align}$$
+</div>
 
-This gives a recall of $$\frac{350}{450} \approx 0.78\ \ \ \ $$ for the breathalyser test and of $$\frac{450}{450} = 1\ \ \ $$ for the lazy police.
+This gives a recall of $\frac{350}{450} \approx 0.78\ \ \ \ $ for the breathalyser test and of $\frac{450}{450} = 1\ \ \ $ for the lazy police.
 
 <img src="{{ page.asset_path }}/confusion-matrix-precision-breathalyser.png" width="50%" align="left"/>
 <img src="{{ page.asset_path }}/confusion-matrix-precision-police.png" width="50%" align="right"/>
 
 Precision, on the other hand, looks at what proportion of those who were predicted to be in a class were actually in that class. It is a measure of the "purity" of predictions. Similarly, applying the formula above to the "drunk" class:
 
+<div>
 $$\begin{align}
 Precision &= \frac{correct\ predictions\ for\ a\ class}{total\ predictions\ for\ that\ class} \\ \\
 &= \frac{Number\ of\ drunk\ people\ who\ tested\ drunk}{Number\ of\ people\ who\ tested\ drunk}
 \end{align}$$
+</div>
 
-This results in a precision of $$\frac{350}{355} \approx 0.99\ \ \ $$ for the breathalyser test and of $$\frac{450}{500} = 0.9\ \ \ $$ for the lazy police.
+This results in a precision of $\frac{350}{355} \approx 0.99\ \ \ $ for the breathalyser test and of $\frac{450}{500} = 0.9\ \ \ $ for the lazy police.
 
 We can see that while the lazy police have slightly higher recall, the breathalyser test has much higher precision. In context, this means that the lazy police identified a bigger proportion of drunk individuals, but the breathalyser test has a substantially lower rate of false identification. Remember that in the case of the lazy police, all 50 sober individuals would have been wrongly arrested, but for the breathalyser, only 5 people would suffer that fate.
 
