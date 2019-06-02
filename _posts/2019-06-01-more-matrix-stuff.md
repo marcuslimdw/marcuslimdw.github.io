@@ -11,7 +11,7 @@ I've been reading [Deep Learning](https://www.deeplearningbook.org/) by Ian Good
 
 Some identities are stated without proof; for those coming from mathematical backgrounds, they must seem quite self-apparent. Again, I wanted to *know* that these identities are valid, so I set out to prove them to myself. There were two in particular...
 
-The first, I encountered while trying to solve [this](https://www.deeplearningbook.org/linear_algebra.pdf) exercise. I ended up with, basically $\textbf{u} \textbf{u}^T + \textbf{u}^T \textbf{u}$. It seemed obvious that they could be combined, but how?
+The first, I encountered while trying to solve [this](https://www.deeplearningbook.org/linear_algebra.pdf) exercise. I ended up with, basically, $\textbf{u} \textbf{u}^T + \textbf{u}^T \textbf{u}$. It seemed obvious that they could be combined, but how?
 
 Of course, it was simple: if you can multiply two vectors together, that is the same as the sum of their elementwise product, which is of course associative. In other words:
 
@@ -42,7 +42,8 @@ a_2 \\
 a_n
 \end{bmatrix}
 
-&= b_1 a_1 + b_2 a_2 + ... + b_n a_n 
+&= b_1 a_1 + b_2 a_2 + ... + b_n a_n \\ 
+&= a_1 b_1 + a_2 b_2 + ... + a_n b_n
 
 \end{align}
 $$
