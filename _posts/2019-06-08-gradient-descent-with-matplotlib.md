@@ -2,7 +2,7 @@
 layout: post
 title:  "Gradient descent with matplotlib"
 date:   2019-06-08 18:00:00 +0800
-categories: [random]
+categories: [stuff]
 tags: [matplotlib, machine-learning, animations]
 asset_path: "/assets/gradient-descent-with-matplotlib/"
 ---
