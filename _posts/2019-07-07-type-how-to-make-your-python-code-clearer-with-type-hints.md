@@ -13,20 +13,20 @@ def repeat_string(to_repeat: str, repeat_count: int) -> str:
     return to_repeat * repeat_count
 ```
 
-Note how the function specifies that it expects a `str` for `to_repeat` and an `int` for `repeat_count`, and to return a `str`. This is termed *type hinting*; the actual expressions that represent the types are *type annotations*. By doing so, we can signal to users of our code, as well as third party tools, what data types our functions expect.
+Note how the function specifies that it expects a `str` for `to_repeat` and an `int` for `repeat_count`, and to return a `str`. This is termed *type hinting*; the actual expressions that represent the types are *type annotations*. They signal to users of our code, as well as third party tools, what data types our functions expect.
 
-Type hinting does not change the behaviour of the function at all; the following function will do exactly the same thing:
+Unlike in static languages (e.g. C++ and Java), type hinting has no effect at runtime on a function's behaviour. Let's say we defined `repeat_string` without type hints, as follows:
 
 ```python
 def repeat_string_no_hints(to_repeat, repeat_count):
     return to_repeat * repeat_count
 ```
 
-If you attempt to execute, say, `repeat_string(None, 1)`, it will fail in exactly the same way as `repeat_string_no_hints`: at runtime, with a `TypeError`. What then is the purpose of type hinting?
+`repeat_string(None, 1)` will compile successfully, just like `repeat_string_no_hints(None, 1)`, but both will fail at runtime with a `TypeError`. No additional checks, either at compile time or runtime, are performed on code with type hints. That naturally raises the question: why use type hints?
 
-First, it makes your code easier to read by making your intentions clearer. In general, code is written once and read many times; while writing it, then, it is often worth a little extra effort to focus on readability and simplicity. Type hinting allows a user to understand what kind of objects your code will accept.
+First, they clarify your intentions, making your code more readable. In general, code is written once and read many times; while writing it, then, it is often worth a little extra effort to focus on readability and simplicity. Type hinting allows a user to understand what kind of objects your code will accept.
 
-Also, a third-party program, such as an IDE (e.g. PyCharm) or a standalone linter (e.g. MyPy), will be able to inspect your code and determine, in most cases, if a function's body is inconsistent with its signature. So, for example, the following function would be highlighted as ill-typed:
+Also, a third-party program, such as an IDE (e.g. PyCharm) or a standalone linter (e.g. MyPy), will be able to inspect your code and determine, in most cases, if a function's body is inconsistent with its signature. So, for example, the following function would be highlighted as ill-typed while editing it:
 
 ```python
 def ill_typed_function(left: str, right: str) -> str:
@@ -34,7 +34,7 @@ def ill_typed_function(left: str, right: str) -> str:
     return left * right 
 ```
 
-PyCharm, after inspecting the code, gives the error "Expected type 'int', got type 'str' instead", since it knows that a `str` on the left side of the `*` operator must have an `int` on the right, but the function expects the value on the right to be a `str`, which doesn't make sense. This error won't prevent the code from compiling; it's just a note to me, the programmer, that there is likely something wrong with how I have structured the code, and if I use it the way I have declared it, I will get a runtime error.
+PyCharm, after inspecting the code, gives the error "Expected type 'int', got type 'str' instead", since it knows that a `str` on the left side of the `*` operator must have an `int` on the right, but the function expects the value on the right to be a `str`, which doesn't make sense. Catching such errors in code as it is written allows us to fix them before they become runtime exceptions.
 
 Type hinting is not limited to basic types, like `str` and `int`. The `typing` module provides a rich set of objects which you can use for highly descriptive type hinting. For example, say you wanted to signal that your function takes a `list` of `ints` and returns a `dict` that maps `strs` to `ints`; you could do something like this:
 
@@ -56,11 +56,11 @@ def my_function_two(my_iterable: Iterable[int]) -> Dict[str, int]:
     ...  # my function body here
 ```
 
-In the `typing` module, there's also a `Mappable` object, which represents collections that allow you to pass in some object to get another corresponding object. At first sight, that seems a lot like a general case of our `Dict[str, int]`. Why, then, don't we change our return type annotation to `Mappable[str, int]`?
+In the `typing` module, there's also a `Mapping` object, which represents collections that allow you to pass in some object to get another corresponding object. At first sight, that seems a lot like a general case of our `Dict[str, int]`. Why, then, don't we change our return type annotation to `Mapping[str, int]`?
 
 The reason is the general principle that functions should be liberal in what they accept but conservative in what they produce. An extensive discussion of this idea is outside the scope of this article, but you can read more about it [here](https://en.wikipedia.org/wiki/Robustness_principle)). 
 
-Practically speaking, consider this: in your function, you *must* return a specific type. A `Mappable` is a *concept*, which a `dict` is a concrete example of. On one hand, your code clearly cannot return such an abstract concept, since it must return an object of some specific type. On the other, even if it could, it would make it more difficult for others to use your code, since they would have to treat the results as generic `Mappables`, rather than the more specific `dict` type. This would lead to losing information that could be crucial in deciding how to use the returned values.
+In any case, a function must return a concrete object. Here, `Mapping` is an interface, not an actual concrete type. Therefore, our function cannot return an instance of it directly, but only one of some concrete type *implementing* `Mapping` - such as a `dict`.
 
 A full examination of the `typing` module is again beyond the scope of this article, but let's take a quick look at the other things you can do:
 
