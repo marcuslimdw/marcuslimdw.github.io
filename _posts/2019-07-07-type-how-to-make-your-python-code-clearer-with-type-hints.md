@@ -15,14 +15,14 @@ def repeat_string(to_repeat: str, repeat_count: int) -> str:
 
 Note how the function specifies that it expects a `str` for `to_repeat` and an `int` for `repeat_count`, and to return a `str`. This is termed *type hinting*; the actual expressions that represent the types are *type annotations*. They signal to users of our code, as well as third party tools, what data types our functions expect.
 
-Unlike in static languages (e.g. C++ and Java), type hinting has no effect at runtime on a function's behaviour. Let's say we defined `repeat_string` without type hints, as follows:
+Unlike in static languages (e.g. C++ and Java), type hinting does not change how the language itself treats functions. Let's say we defined `repeat_string` without type hints, as follows:
 
 ```python
 def repeat_string_no_hints(to_repeat, repeat_count):
     return to_repeat * repeat_count
 ```
 
-`repeat_string(None, 1)` will compile successfully, just like `repeat_string_no_hints(None, 1)`, but both will fail at runtime with a `TypeError`. No additional checks, either at compile time or runtime, are performed on code with type hints. That naturally raises the question: why use type hints?
+`repeat_string(None, 1)` will compile successfully, just like `repeat_string_no_hints(None, 1)`, but both will fail at runtime with a `TypeError`. No additional checks, either at compile time or runtime, are performed on code with type hints. That naturally raises the question: why use type hints, then?
 
 First, they clarify your intentions, making your code more readable. In general, code is written once and read many times; while writing it, then, it is often worth a little extra effort to focus on readability and simplicity. Type hinting allows a user to understand what kind of objects your code will accept.
 
