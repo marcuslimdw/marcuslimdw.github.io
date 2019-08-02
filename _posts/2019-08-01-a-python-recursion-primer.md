@@ -14,11 +14,11 @@ You could use a `for` loop:
 
 ```python
 def factorial_iter(n):
-	result = 1
-	for i in range(1, n + 1):
-		result *= i
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
 
-	return result
+    return result
 ```
 
 This is called an *iterative* method because you go through the numbers in the `range` object one by one, multiplying them by a persistent variable, and eventually return its value once you're done.
@@ -27,11 +27,11 @@ An alternative method is to use *recursion*:
 
 ```python
 def factorial_rec(n):
-	if n == 0:
-		return 1
+    if n == 0:
+        return 1
 
-	else:
-		return factorial_rec(n - 1) * n
+    else:  #  Just to clearly differentiate between base and recursive cases.
+        return factorial_rec(n - 1) * n
 ```
 
 <img src="{{ page.asset_path }}factorial_stack.gif" width="40%" align="right">
