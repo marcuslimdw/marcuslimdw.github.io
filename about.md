@@ -4,4 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I'm a law student turned data scientist. I write code (mostly Python, with some Scala and SQL) for a living, then when I can find the time, I go home and write more code. I'm particularly interested in machine learning and deep learning.
+I'm a law student turned data scientist. I'm most familiar with Python and Scala, and I dabble in C and Haskell on the side.
+
+Things I believe:
+
+* Readability counts.
+* Deep learning is super awesome.
+* Writing code is an art. Life is too short to write bad code.
