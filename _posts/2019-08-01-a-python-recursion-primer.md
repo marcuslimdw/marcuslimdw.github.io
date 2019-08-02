@@ -65,12 +65,12 @@ For collections, on the other hand, we need to perform this check on everything 
 In code, it would look something like this:
 
 ```python
-def find_none_rec(json, count=0):
+def find_none_rec(json):
     if isinstance(json, dict):
-        return sum(find_none_rec(value, count) for value in json.values())
+        return sum(find_none_rec(value) for value in json.values())
     
     elif isinstance(json, list):
-        return sum(find_none_rec(element, count) for element in json)
+        return sum(find_none_rec(element) for element in json)
     
     else:
         return int(json is None)  # Not strictly necessary, but clearer.
